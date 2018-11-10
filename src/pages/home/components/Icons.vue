@@ -1,11 +1,15 @@
 <template>
     <div class="icons">
-        <div class="icon" v-for="item in items" :key="item.id">
-            <div class="icon-img">
-                <img class="icon-img-content" :src="item.imgUrl">
-            </div>
-            <p class="icon-title" v-text="item.title"></p>
-        </div>
+        <swiper>
+            <swiper-slide v-for="(page,index) in pages" :key="index" data-swiper-autoplay="5000">
+                <div class="icon" v-for="item in page" :key="item.id">
+                    <div class="icon-img">
+                        <img class="icon-img-content" :src="item.imgUrl">
+                    </div>
+                    <p class="icon-title" v-text="item.title"></p>
+                </div>
+            </swiper-slide>
+        </swiper>
     </div>
 </template>
 
@@ -66,6 +70,19 @@ export default {
           title: '全部玩乐'
         }
       ]
+    }
+  },
+  computed: {
+    pages () {
+      const pages = []
+      this.items.forEach((item, index) => {
+        const page = Math.floor(index / 8)
+        if (!pages[page]) {
+          pages[page] = []
+        }
+        pages[page].push(item)
+      })
+      return pages
     }
   }
 }
