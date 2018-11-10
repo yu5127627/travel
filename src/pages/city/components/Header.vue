@@ -1,16 +1,10 @@
 <template>
-        <div class="header">
-            <router-link to="/">
-                <div class="iconfont header-back">&#xe624;</div>
-            </router-link>
-            城市选择
-        </div>
-        <!--<div class="main">-->
-            <!--<div class="main-tab">-->
-                <!--<span>境内</span>-->
-                <!--<span>境外/港澳台</span>-->
-            <!--</div>-->
-        <!--</div>-->
+    <div class="header">
+        <router-link to="/">
+            <div class="iconfont header-back">&#xe624;</div>
+        </router-link>
+        城市选择
+    </div>
 </template>
 
 <script>
@@ -25,7 +19,7 @@ export default {
         background-color: #00bcd4;
         text-align: center;
         font-size: .32rem;
-        line-height: .8rem;
+        line-height: 1rem;
         color: white;
         overflow: hidden;
 
