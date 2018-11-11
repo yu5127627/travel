@@ -3,7 +3,6 @@
         <city-header></city-header>
         <city-search></city-search>
         <city-list :hotCity="hotCity"
-                   :citySort="citySort"
                    :cityAll="cityAll"
         ></city-list>
     </div>
@@ -24,7 +23,6 @@ export default {
   data () {
     return {
       hotCity: [],
-      citySort: [],
       cityAll: {}
     }
   },
@@ -37,7 +35,6 @@ export default {
       res = res.data
       if (res.ret && res.data) {
         this.hotCity = res.data.hotCities
-        this.citySort = res.data.citySort
         this.cityAll = res.data.cities
       }
     }

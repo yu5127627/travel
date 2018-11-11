@@ -12,10 +12,13 @@
             <div class="sort-city">字母排序</div>
             <ul class="sort-city-ul">
                 <li class="sort-city-li"
-                    v-for="(sort,index) of citySort"
-                    v-text="sort"
-                    :key="index"
-                ></li>
+                    v-for="(sort,key) of cityAll"
+                    :key="key"
+                    :ref="key"
+                    @click="handClick"
+                >
+                    {{ key }}
+                </li>
             </ul>
             <div v-for="(city,key) of cityAll" :key="key">
                 <div class="a-city" v-text="key"></div>
@@ -38,8 +41,22 @@ export default {
   name: 'CityList',
   props: {
     hotCity: Array,
-    citySort: Array,
     cityAll: Object
+  },
+  data () {
+    return {
+      rec: ''
+    }
+  },
+  methods: {
+    handClick (e) {
+      this.rec = e.target.innerText
+      console.log(this.rec)
+      if (this.rec) {
+        const element = this.$refs[this.rec][0]
+        this.scroll.scrollToElement(element)
+      }
+    }
   },
   mounted () {
     // vue 完全加载完毕才会执行的钩子函数
