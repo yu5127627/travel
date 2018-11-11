@@ -18,6 +18,7 @@ export default {
         height: .4rem;
         background-color: #00bcd4;
         padding: .2rem;
+        margin-top: -.02rem;
     }
     .search {
         height: .4rem;
