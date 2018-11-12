@@ -2,9 +2,10 @@
     <div>
         <city-header></city-header>
         <city-search></city-search>
-        <div class="city-list" ref="wrapper">
+        <div ref="wrapper">
             <div class="wrapper">
                 <city-hot :hotCity="hotCity"></city-hot>
+                <city-sort :cityAll="cityAll"></city-sort>
                 <city-list :cityAll="cityAll"></city-list>
             </div>
         </div>
@@ -15,8 +16,9 @@
 import BScroll from 'better-scroll'
 import CityHeader from './components/Header'
 import CitySearch from './components/Search'
+import CityHot from './components/CityHot'
+import CitySort from './components/Citysort'
 import CityList from './components/List'
-import CityHot from './components/cityHot'
 import axios from 'axios'
 export default {
   name: 'City',
@@ -24,7 +26,8 @@ export default {
     CityHeader,
     CitySearch,
     CityList,
-    CityHot
+    CityHot,
+    CitySort
   },
   data () {
     return {
