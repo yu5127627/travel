@@ -5,8 +5,8 @@
         <div ref="wrapper">
             <div class="wrapper">
                 <city-hot :hotCity="hotCity"></city-hot>
-                <city-sort :cityAll="cityAll"></city-sort>
-                <city-list :cityAll="cityAll"></city-list>
+                <city-sort :cityAll="cityAll" @change="handleLetterChange"></city-sort>
+                <city-list :cityAll="cityAll" :letter="letter"></city-list>
             </div>
         </div>
     </div>
@@ -32,7 +32,8 @@ export default {
   data () {
     return {
       hotCity: [],
-      cityAll: {}
+      cityAll: {},
+      letter: ''
     }
   },
   methods: {
@@ -46,6 +47,9 @@ export default {
         this.hotCity = res.data.hotCities
         this.cityAll = res.data.cities
       }
+    },
+    handleLetterChange (letter) {
+      this.letter = letter
     }
   },
   mounted () {

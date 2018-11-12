@@ -6,6 +6,7 @@
                 v-for="(sort,key) of cityAll"
                 :key="key"
                 :ref="key"
+                @click="handleClick"
             >
                 {{ key }}
             </li>
@@ -18,6 +19,11 @@ export default {
   name: 'CitySort',
   props: {
     cityAll: Object
+  },
+  methods: {
+    handleClick (e) {
+      this.$emit('change', e.target.innerText)
+    }
   }
 }
 </script>
