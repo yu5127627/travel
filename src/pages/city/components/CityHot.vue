@@ -6,6 +6,7 @@
                 v-for="item of hotCity"
                 v-text="item.name"
                 :key="item.id"
+                @click="handleValue(item.name)"
             ></li>
         </ul>
     </div>
@@ -16,6 +17,12 @@ export default {
   name: 'CityHot',
   props: {
     hotCity: Array
+  },
+  methods: {
+    handleValue (val) {
+      this.$store.dispatch('changeCity', val)
+      this.$router.push('/')
+    }
   }
 }
 </script>

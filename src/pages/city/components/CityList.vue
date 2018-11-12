@@ -1,5 +1,5 @@
 <template>
-    <div ref="web">
+    <div ref="web" class="res">
         <div class="city-list">
             <div class="list-city" v-for="(city,key) of cityAll" :key="key" :ref="key">
                 <div v-text="key"></div>
@@ -7,7 +7,9 @@
                     <li v-for="list of city"
                         class="list-city-li"
                         v-text="list.name"
-                        :key="list.id">
+                        :key="list.id"
+                        @click="handleValue(list.name)"
+                    >
                     </li>
                 </ul>
             </div>
@@ -22,6 +24,12 @@ export default {
   props: {
     cityAll: Object,
     letter: String
+  },
+  methods: {
+    handleValue (val) {
+      this.$store.dispatch('changeCity', val)
+      this.$router.push('/')
+    }
   },
   watch: {
     letter () {
@@ -41,9 +49,8 @@ export default {
 <style lang="stylus" scoped>
     .city-list{
         position: absolute;
-        top: 8rem;
+        top: 7.84rem;
         left: 0;
-        right: 0;
         background-color: #fff;
     }
     .list-city>div{

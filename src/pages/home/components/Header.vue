@@ -9,7 +9,7 @@
         </div>
         <router-link to="/city">
             <div class="header-right">
-                {{ this.city }}
+                {{ this.$store.state.city }}
                 <span class="iconfont search-icon">&#xe6aa;</span>
             </div>
         </router-link>
@@ -18,10 +18,7 @@
 
 <script>
 export default {
-  name: 'HomeHeader',
-  props: {
-    city: String
-  }
+  name: 'HomeHeader'
 }
 </script>
 
@@ -29,6 +26,7 @@ export default {
     @import '~styles/varibles.styl';
 
     .header {
+        height: .86rem;
         line-height: .86rem;
         background-color: $bgColor;
         color: #fff;
@@ -59,10 +57,12 @@ export default {
     }
 
     .header-right {
-        width: 1.24rem;
+        min-width: 1.04rem;
+        padding: 0 .1rem;
         float: right;
         text-align: center;
         color: #fff;
+        overflow: hidden;
     }
 
     .search-icon {
