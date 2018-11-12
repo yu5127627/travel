@@ -18,16 +18,16 @@ import CityHeader from './components/Header'
 import CitySearch from './components/Search'
 import CityHot from './components/CityHot'
 import CitySort from './components/Citysort'
-import CityList from './components/List'
+import CityList from './components/CityList'
 import axios from 'axios'
 export default {
   name: 'City',
   components: {
     CityHeader,
     CitySearch,
-    CityList,
     CityHot,
-    CitySort
+    CitySort,
+    CityList
   },
   data () {
     return {

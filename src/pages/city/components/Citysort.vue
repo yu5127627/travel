@@ -6,7 +6,6 @@
                 v-for="(sort,key) of cityAll"
                 :key="key"
                 :ref="key"
-                @click="handClick"
             >
                 {{ key }}
             </li>
