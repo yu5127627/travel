@@ -1,6 +1,5 @@
 <template>
     <div class="banner">
-        <div class="iconfont banner-back">&#xe624;</div>
         <img @click="handleImgClick" class="banner-img" src="http://img1.qunarzz.com/sight/p0/201402/27/9566b58bc52cbdbac547b28c48e8ec96.jpg_600x330_aaf0f175.jpg" alt="">
         <div class="iconfont banner-icon">&#xe632;&nbsp;13</div>
         <p class="banner-title">大汖温泉</p>
@@ -10,7 +9,6 @@
                 v-show="showGallary"
                 @close="handleGallaryClose"
         >
-
         </common-gallary>
     </div>
 </template>
@@ -50,21 +48,6 @@ export default {
     .banner-img {
         width: 100%;
     }
-    .banner-back {
-        position: absolute;
-        top: .18rem;
-        left: .12rem;
-
-        width: .7rem;
-        height: .7rem;
-        color: white;
-        font-size: .4rem;
-        font-weight: 600;
-        text-align: center;
-        line-height: .7rem;
-        background-color: rgba(0,0,0,.6);
-        border-radius: .35rem;
-    }
     .banner-icon {
         width: 1.2rem;
         height: .38rem;
@@ -78,12 +61,12 @@ export default {
 
         position: absolute;
         bottom: .8rem;
-        left: .12rem;
+        left: .4rem;
     }
     .banner-title {
         position: absolute;
         bottom: .2rem;
-        left: .12rem;
+        left: .4rem;
 
         font-size: .36rem;
         color: #fff;
