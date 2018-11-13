@@ -5,7 +5,13 @@
             猜你喜欢
         </div>
         <ul class="rm-like">
-            <li class="rm-like-list border-bottom" v-for="item in list" :key="item.id">
+            <router-link
+                tag="li"
+                class="rm-like-list border-bottom"
+                v-for="item in list"
+                :key="item.id"
+                to="detail/ + item.id"
+            >
                 <img class="rm-like-img" :src="item.imgUrl" :alt="item.title">
                 <div class="rm-list-info">
                     <p class="rm-list-info-title" v-text="item.title"></p>
@@ -15,7 +21,7 @@
                         <button class="rm-list-info-btn" v-text="item.click"></button>
                     </p>
                 </div>
-            </li>
+            </router-link>
         </ul>
     </div>
 </template>
