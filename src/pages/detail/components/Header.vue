@@ -94,6 +94,7 @@ export default {
         font-size: .34rem;
         text-align: center;
         background-color: #00bcd4;
+        z-index: 1;
     }
 
     .header-title-back {
