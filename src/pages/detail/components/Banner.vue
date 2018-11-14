@@ -4,17 +4,20 @@
         <div class="iconfont banner-icon">&#xe632;&nbsp;{{ this.gallaryImgs.length }}</div>
         <p class="banner-title">{{ sightName }}</p>
         <div class="banner-linear"></div>
-        <common-gallary
-                :imgs="gallaryImgs"
-                v-show="showGallary"
-                @close="handleGallaryClose"
-        >
-        </common-gallary>
+        <fade-animation>
+            <common-gallary
+                    :imgs="gallaryImgs"
+                    v-show="showGallary"
+                    @close="handleGallaryClose"
+            >
+            </common-gallary>
+        </fade-animation>
     </div>
 </template>
 
 <script>
-import CommonGallary from 'common/gallary/Gallary'
+import CommonGallary from 'public/gallary/Gallary'
+import FadeAnimation from 'public/animations/fade'
 export default {
   name: 'DetailBanner',
   data () {
@@ -28,7 +31,8 @@ export default {
     gallaryImgs: Array
   },
   components: {
-    CommonGallary
+    CommonGallary,
+    FadeAnimation
   },
   methods: {
     handleImgClick () {
