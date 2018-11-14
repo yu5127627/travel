@@ -54,8 +54,8 @@ export default {
         letter-spacing: .02rem;
     }
     .rm-like-img{
-        width: 2rem;
-        height: 2rem;
+        /*width: 2rem;*/
+        height: 100%;
     }
     .rm-list-info{
         margin-left: .2rem;

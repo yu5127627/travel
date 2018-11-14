@@ -34,7 +34,6 @@ export default {
   },
   methods: {
     handleScroll () {
-      console.log('scroll')
       let top = document.documentElement.scrollTop
       if (top > 46) {
         let opacity = top / 140

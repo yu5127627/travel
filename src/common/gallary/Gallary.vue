@@ -65,10 +65,10 @@ export default {
     }
     .gallary-img {
         width: 100%;
-        margin-top: .8rem;
+        /*margin-top: .8rem;*/
     }
     .swiper-pagination {
         color: #fff;
-        bottom: -2.8rem;
+        bottom: -1.8rem;
     }
 </style>
