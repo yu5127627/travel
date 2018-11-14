@@ -34,6 +34,7 @@ export default {
   },
   methods: {
     handleScroll () {
+      console.log('scroll')
       let top = document.documentElement.scrollTop
       if (top > 46) {
         let opacity = top / 140
@@ -46,7 +47,12 @@ export default {
     }
   },
   activated () {
+    // 每次页面被展示时执行此钩子函数
     window.addEventListener('scroll', this.handleScroll)
+  },
+  deactivated () {
+    // (页面即将被隐藏 / 页面即将被替换成新的页面时)被执行
+    window.removeEventListener('scroll', this.handleScroll)
   }
 }
 </script>
