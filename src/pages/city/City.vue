@@ -2,32 +2,28 @@
     <div>
         <city-header></city-header>
         <city-search></city-search>
-        <div ref="wrapper">
-            <div class="wrapper">
-                <city-hot :hotCity="hotCity"></city-hot>
-                <city-sort :cityAll="cityAll" @change="handleLetterChange"></city-sort>
-                <city-list :cityAll="cityAll" :letter="letter"></city-list>
-            </div>
+        <div class="city-main">
+            <city-item
+                    :hotCity="hotCity"
+                    :cityAll="cityAll"
+                    :letter="letter"
+            >
+            </city-item>
         </div>
     </div>
 </template>
 
 <script>
-import BScroll from 'better-scroll'
 import CityHeader from './components/Header'
 import CitySearch from './components/Search'
-import CityHot from './components/CityHot'
-import CitySort from './components/Citysort'
-import CityList from './components/CityList'
+import CityItem from './components/CityItem'
 import axios from 'axios'
 export default {
   name: 'City',
   components: {
     CityHeader,
     CitySearch,
-    CityHot,
-    CitySort,
-    CityList
+    CityItem
   },
   data () {
     return {
@@ -47,14 +43,9 @@ export default {
         this.hotCity = res.data.hotCities
         this.cityAll = res.data.cities
       }
-    },
-    handleLetterChange (letter) {
-      this.letter = letter
     }
   },
   mounted () {
-    // vue 完全加载完毕才会执行的钩子函数
-    this.scroll = new BScroll(this.$refs.wrapper)
     // 初始化页面后调用
     this.getCityList()
   }
@@ -62,11 +53,11 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
-    .wrapper{
-        position: absolute;
-        top: 1.48rem;
+    .city-main {
+        position: relative;
+        top: 0;
         left: 0;
         right: 0;
-        z-index: -1;
+        bottom: 0;
     }
 </style>
