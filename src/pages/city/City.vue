@@ -34,7 +34,7 @@ export default {
   },
   methods: {
     getCityList () {
-      axios.get('/api/city.json')
+      axios.get('./static/mock/city.json')
         .then(this.getCityListSucc)
     },
     getCityListSucc (res) {
