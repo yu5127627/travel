@@ -46,6 +46,7 @@
                     </ul>
                 </div>
             </div>
+            <!-- 返回顶部 -->
         </div>
     </div>
 </template>
@@ -82,7 +83,7 @@ export default {
     }
   },
   mounted () {
-    this.scroll = new Bscroll(this.$refs.web)
+    this.scroll = new Bscroll(this.$refs.web, {click: true})
   }
 }
 </script>
